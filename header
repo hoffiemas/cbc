@@ -1,0 +1,35 @@
+export class MessageSpec_2016 {
+  constructor(
+    public SendingEntityIN: string, // Should be a TIN of Sender
+    public TransmittingCountry: string,
+    public ReceivingCountry: string,
+    public MessageType: string,
+    public Language: string,
+    public MessageRefId: string,
+    public MessageTypeIndic: string,
+    public ReportingPeriod: string,
+    public Timestamp: { year: number | string, month: number | string, day: number | string },
+    public Warning?: string,
+    public Contact?: string, ) {
+  }
+  
+  getData(): INode[] {
+    let yyyy = this.Timestamp.year.toString();
+    let mm = this.Timestamp.month.toString();
+    let dd = this.Timestamp.day.toString();
+    let _timeStamp = yyyy + "-" + mm + "-" + dd;
+
+    return [{ name: "SendingEntityIN", value: this.SendingEntityIN },
+    { name: "TransmittingCountry", value: this.TransmittingCountry },
+    { name: "ReceivingCountry", value: this.ReceivingCountry },
+    { name: "MessageType", value: this.MessageType },
+    { name: "Language", value: this.Language },
+    { name: "MessageRefId", value: this.MessageRefId },
+    { name: "MessageTypeIndic", value: this.MessageTypeIndic },
+    { name: "ReportingPeriod", value: this.ReportingPeriod },
+    { name: "Timestamp", value: _timeStamp },
+    { name: "Warning", value: (this.Warning == null) ? "" : this.Warning },
+    { name: "Contact", value: (this.Contact == null) ? "" : this.Contact }
+    ]
+  }
+}
