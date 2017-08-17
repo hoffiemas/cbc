@@ -1,4 +1,4 @@
-const OECDDocTypeIndic_2016= [
+const OECDDocTypeIndic_2016 = [
        // { value: "OECD0", name: "Resent Data" }, not used
         { value: "OECD1", name: "New Data" },
         { value: "OECD2", name: "Corrected Data" },
@@ -9,7 +9,7 @@ const OECDDocTypeIndic_2016= [
         { value: "OECD13", name: "Deletion of Test Data" }
       ];
 
-const OECDNameType= [
+const OECDNameType_2016 = [
        { value: "OECD201", name: "SMFAliasOrOther" },
        { value: "OECD202", name: "indiv (individual)" },
        { value: "OECD203", name: "alias (alias)" },
@@ -18,6 +18,14 @@ const OECDNameType= [
        { value: "OECD206", name: "dba (doing business as)" },
        { value: "OECD207", name: "legal (legal name)" },
        { value: "OECD208", name: "atbirth (name at birth)" }
+]
+
+const OECDLegalAddressType_2016 = [
+       { value: "OECD301", name: "residentialOrBusiness" },
+       { value: "OECD302", name: "residential" },
+       { value: "OECD303", name: "business" },
+       { value: "OECD304", name: "registeredOffice" },
+       { value: "OECD305", name: "unspecified" }
 ]
 
 
